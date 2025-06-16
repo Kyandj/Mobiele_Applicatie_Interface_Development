@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobiele_Applicatie_Interface_Studio", "Mobiele_Applicatie_Interface_Studio\Mobiele_Applicatie_Interface_Studio.csproj", "{B5D16587-71CA-4178-8AA0-0013A25E2C71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5D16587-71CA-4178-8AA0-0013A25E2C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D16587-71CA-4178-8AA0-0013A25E2C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D16587-71CA-4178-8AA0-0013A25E2C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D16587-71CA-4178-8AA0-0013A25E2C71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {065DA976-4DE3-4303-BB66-B5B4D91BD65E}
+	EndGlobalSection
+EndGlobal
