@@ -1,4 +1,4 @@
-namespace Mobiele_Applicatie_Interface_Studio.Pagina_s;
+namespace Mobiele_Applicatie_Interface_Studio.Pages;
 
 public partial class RoutePagina : ContentPage
 {
