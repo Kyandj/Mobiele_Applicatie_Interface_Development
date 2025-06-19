@@ -35,9 +35,8 @@ public partial class LocationService : ObservableObject, IDisposable
 
         _cts = new CancellationTokenSource();
 
-        // Start live tracking met een observable
         _locationSubscription = Observable
-            .Interval(TimeSpan.FromSeconds(1))
+            .Interval(TimeSpan.FromSeconds(10))
             .SelectMany(async _ =>
             {
                 try
