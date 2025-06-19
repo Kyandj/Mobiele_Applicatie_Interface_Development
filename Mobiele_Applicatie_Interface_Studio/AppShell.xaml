@@ -7,10 +7,16 @@
     Shell.FlyoutBehavior="Flyout"
     Title="Mobiele_Applicatie_Interface_Studio">
 
+    <!-- Voeg je pagina's toe hier -->
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate pages:MainPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Title="Route"
+        ContentTemplate="{DataTemplate local:Routepage}"
+        Route="Routepage" />
 
 </Shell>
 

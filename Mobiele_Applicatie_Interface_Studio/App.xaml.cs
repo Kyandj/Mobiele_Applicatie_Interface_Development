@@ -1,15 +1,13 @@
-﻿namespace Mobiele_Applicatie_Interface_Studio
+﻿using Microsoft.Maui.Controls;
+
+namespace Mobiele_Applicatie_Interface_Studio
 {
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
-        }
-
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
+            MainPage = new AppShell();
         }
     }
 }
