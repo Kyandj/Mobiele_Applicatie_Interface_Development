@@ -16,7 +16,7 @@
                 SemanticProperties.Description="dot net bot in a hovercraft number nine" />
 
             <Label
-                Text="Test Kyan!"
+                Text="Test Darren!"
                 FontSize="32"
                 FontAttributes="Bold"
                 SemanticProperties.HeadingLevel="Level1" />
