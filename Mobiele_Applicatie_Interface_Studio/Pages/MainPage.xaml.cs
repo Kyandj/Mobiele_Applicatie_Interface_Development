@@ -9,7 +9,7 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        _locationService.Start(); 
+        _ = _locationService.StartLiveTrackingAsync();
     }
 
     private void OnCounterClicked(object sender, EventArgs e)

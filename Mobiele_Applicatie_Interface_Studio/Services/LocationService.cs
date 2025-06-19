@@ -1,12 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.Maui.Devices;
 using Microsoft.Maui.Devices.Sensors;
 using Microsoft.Maui.ApplicationModel;
+using System;
 using System.Diagnostics;
 using System.Reactive.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Refit;
-using System;
-
 
 public partial class LocationService : ObservableObject, IDisposable
 {
@@ -37,7 +37,7 @@ public partial class LocationService : ObservableObject, IDisposable
 
         // Start live tracking met een observable
         _locationSubscription = Observable
-            .Interval(TimeSpan.FromSeconds(1)) 
+            .Interval(TimeSpan.FromSeconds(1))
             .SelectMany(async _ =>
             {
                 try
@@ -54,10 +54,10 @@ public partial class LocationService : ObservableObject, IDisposable
                 }
             })
             .Where(loc => loc != null)
-            .Subscribe(async loc =>
+            .Subscribe(loc =>
             {
                 CurrentLocation = loc;
-                await SendLocationToWebhookAsync(loc!);
+                _ = SendLocationToWebhookAsync(loc!);
             });
     }
 

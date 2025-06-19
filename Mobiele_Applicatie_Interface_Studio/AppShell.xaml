@@ -3,13 +3,14 @@
     x:Class="Mobiele_Applicatie_Interface_Studio.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Mobiele_Applicatie_Interface_Studio"
+    xmlns:pages="clr-namespace:Mobiele_Applicatie_Interface_Studio.Pages"
     Shell.FlyoutBehavior="Flyout"
     Title="Mobiele_Applicatie_Interface_Studio">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate pages:MainPage}"
         Route="MainPage" />
 
 </Shell>
+
