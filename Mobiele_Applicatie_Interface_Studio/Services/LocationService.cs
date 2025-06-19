@@ -17,7 +17,7 @@ public partial class LocationService : ObservableObject, IDisposable
     [ObservableProperty]
     private Location? currentLocation;
 
-    private const string ApiUrl = "https://webhook.site/4665b091-7652-4dbd-9f44-98109ae6cbfb";
+    private const string ApiUrl = "https://webhook.site/c4124208-ed3a-4276-8bda-b5bff8c46e09";
 
     public LocationService()
     {
@@ -26,12 +26,25 @@ public partial class LocationService : ObservableObject, IDisposable
 
     public async Task StartLiveTrackingAsync()
     {
-        var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+        var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
+        if (status != PermissionStatus.Granted)
+        {
+            status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+        }
         if (status != PermissionStatus.Granted)
         {
             Debug.WriteLine("Locatiepermissie geweigerd.");
+            if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.Android)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Locatie vereist",
+                    "Deze app heeft locatiepermissie nodig. Geef toestemming in de instellingen.",
+                    "OK");
+                AppInfo.ShowSettingsUI();
+            }
             return;
         }
+
 
         _cts = new CancellationTokenSource();
 
