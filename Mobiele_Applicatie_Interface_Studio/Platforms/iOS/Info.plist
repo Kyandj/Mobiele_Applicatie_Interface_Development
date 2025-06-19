@@ -30,9 +30,7 @@
 		<string>Assets.xcassets/appicon.appiconset</string>
 
 		<!-- Geolocation API Kyan -->
-		<key>NSLocationWhenInUseUsageDescription</key>
-		<string>This app needs your location to send GPS updates to your employer.</string>
 		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-		<string>This app needs your location to send GPS updates to your employer, even in the background.</string>
+		<string>Deze app stuurt de live locatie naar je werkgever.</string>
 	</dict>
 </plist>

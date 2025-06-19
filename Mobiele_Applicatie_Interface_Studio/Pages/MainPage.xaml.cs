@@ -1,4 +1,5 @@
-﻿namespace Mobiele_Applicatie_Interface_Studio.Pages;
+﻿using Microsoft.Maui.Controls;
+namespace Mobiele_Applicatie_Interface_Studio.Pages;
 
 public partial class MainPage : ContentPage
 {
