@@ -1,10 +1,10 @@
-﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls;
 namespace Mobiele_Applicatie_Interface_Studio.Pages;
 
 public partial class MainPage : ContentPage
 {
     int count = 0;
-    private readonly LocationService _locationService = new(); 
+    private readonly LocationService _locationService = new();
 
     public MainPage()
     {
