@@ -1,4 +1,4 @@
-﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls;
 using Mobiele_Applicatie_Interface_Studio.ViewModels;
 using Mobiele_Applicatie_Interface_Studio.Models;
 
@@ -22,6 +22,13 @@ public partial class MainPage : ContentPage
 
             await DisplayAlert("Route", $"Toon route voor bestelling: {order.OrderId}", "OK");
         }
+    }
+
+    private async void OnOpenGoogleMapsClicked(object sender, EventArgs e)
+    {
+        var address = "Drievogelstraat";
+        var url = $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(address)}";
+        await Launcher.Default.OpenAsync(url);
     }
 }
 
