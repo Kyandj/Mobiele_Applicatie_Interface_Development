@@ -1,27 +1,27 @@
 ﻿using Microsoft.Maui.Controls;
+using Mobiele_Applicatie_Interface_Studio.ViewModels;
+using Mobiele_Applicatie_Interface_Studio.Models;
+
 namespace Mobiele_Applicatie_Interface_Studio.Pages;
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
-    private readonly LocationService _locationService = new(); 
+    private readonly LocationService _locationService = new();
 
     public MainPage()
     {
         InitializeComponent();
+        BindingContext = new MainPageViewModel();
         _ = _locationService.StartLiveTrackingAsync();
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
+    private async void OnRouteClicked(object sender, EventArgs e)
     {
-        count++;
+        if (sender is Button button && button.BindingContext is Order order)
+        {
 
-        if (count == 1)
-            CounterBtn.Text = $"Clicked {count} time";
-        else
-            CounterBtn.Text = $"Clicked {count} times";
-
-        SemanticScreenReader.Announce(CounterBtn.Text);
+            await DisplayAlert("Route", $"Toon route voor bestelling: {order.OrderId}", "OK");
+        }
     }
 }
 
