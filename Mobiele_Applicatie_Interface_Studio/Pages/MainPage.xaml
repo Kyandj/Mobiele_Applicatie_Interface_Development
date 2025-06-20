@@ -56,7 +56,7 @@
                                 <Label Text="{Binding Address}" FontSize="14"/>
                                 <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,5,0,0">
                                     <Frame Grid.Column="0" Padding="5,2" BackgroundColor="Yellow" CornerRadius="8" HasShadow="False" VerticalOptions="Center">
-                                        <Label Text="Onderweg" FontSize="12" TextColor="Black"/>
+                                        <Label Text="Niet bezorgd" FontSize="12" TextColor="Black"/>
                                     </Frame>
                                     <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <Button Grid.Column="2" Text="Route" BackgroundColor="LimeGreen" TextColor="White" CornerRadius="16" HeightRequest="32" WidthRequest="80" Clicked="OnRouteClicked" VerticalOptions="Center"/>
@@ -78,7 +78,7 @@
                                 <Label Text="{Binding Address}" FontSize="14"/>
                                 <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,5,0,0">
                                     <Frame Grid.Column="0" Padding="5,2" BackgroundColor="Yellow" CornerRadius="8" HasShadow="False" VerticalOptions="Center">
-                                        <Label Text="Onderweg" FontSize="12" TextColor="Black"/>
+                                        <Label Text="Bezorgd" FontSize="12" TextColor="Black"/>
                                     </Frame>
                                     <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center"/>
                                     <Button Grid.Column="2" Text="Route" BackgroundColor="LimeGreen" TextColor="White" CornerRadius="16" HeightRequest="32" WidthRequest="80" Clicked="OnRouteClicked" VerticalOptions="Center"/>
