@@ -26,7 +26,8 @@ public partial class MainPage : ContentPage
 
     private async void OnOpenGoogleMapsClicked(object sender, EventArgs e)
     {
-        var url = "https://www.google.com/maps";
+        var address = "Drievogelstraat";
+        var url = $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(address)}";
         await Launcher.Default.OpenAsync(url);
     }
 }

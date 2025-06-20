@@ -1,4 +1,4 @@
- <?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobiele_Applicatie_Interface_Studio.Pages.MainPage"
@@ -22,9 +22,8 @@
             x:Name="Route"
             Text="Open Google Maps"
             Clicked="OnOpenGoogleMapsClicked"
-            WidthRequest="200"
-            HeightRequest="60"/>
-
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
     </VerticalStackLayout>
 
 </ContentPage>
