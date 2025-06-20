@@ -34,6 +34,16 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
 
+            <Button
+                Text="Go to BestellingDetails"
+                Clicked="OnBestellingDetailsClicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                Text="Go to RoutePagina"
+                Clicked="OnRoutePaginaClicked"
+                HorizontalOptions="Fill" />
+
         </VerticalStackLayout>
     </ScrollView>
 

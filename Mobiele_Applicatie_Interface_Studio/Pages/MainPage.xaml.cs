@@ -1,4 +1,6 @@
 ﻿using Microsoft.Maui.Controls;
+using Mobiele_Applicatie_Interface_Studio.Pages;
+
 namespace Mobiele_Applicatie_Interface_Studio.Pages;
 
 public partial class MainPage : ContentPage
@@ -22,6 +24,16 @@ public partial class MainPage : ContentPage
             CounterBtn.Text = $"Clicked {count} times";
 
         SemanticScreenReader.Announce(CounterBtn.Text);
+    }
+
+    private async void OnBestellingDetailsClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new BestellingDetails());
+    }
+
+    private async void OnRoutePaginaClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new RoutePagina());
     }
 }
 

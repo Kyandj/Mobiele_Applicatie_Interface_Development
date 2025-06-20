@@ -17,7 +17,7 @@ public partial class LocationService : ObservableObject, IDisposable
     [ObservableProperty]
     private Location? currentLocation;
 
-    private const string ApiUrl = "https://webhook.site/c4124208-ed3a-4276-8bda-b5bff8c46e09";
+    private const string ApiUrl = "https://webhook.site/ac72e73a-82c3-4341-ab80-bf6b07999fe1";
 
     public LocationService()
     {
