@@ -17,18 +17,22 @@ public partial class MainPage : ContentPage
 
     private async void OnRouteClicked(object sender, EventArgs e)
     {
-        if (sender is Button button && button.BindingContext is Order order)
+        // Haal het order-object op uit de BindingContext van de knop
+        var button = sender as Button;
+        if (button?.BindingContext is not null)
         {
-
-            await DisplayAlert("Route", $"Toon route voor bestelling: {order.OrderId}", "OK");
+            // Probeer het adres op te halen uit het order-object
+            var order = button.BindingContext;
+            var addressProperty = order.GetType().GetProperty("Address");
+            if (addressProperty != null)
+            {
+                var address = addressProperty.GetValue(order)?.ToString();
+                if (!string.IsNullOrWhiteSpace(address))
+                {
+                    var url = $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(address)}";
+                    await Launcher.Default.OpenAsync(url);
+                }
+            }
         }
     }
-
-    private async void OnOpenGoogleMapsClicked(object sender, EventArgs e)
-    {
-        var address = "Drievogelstraat";
-        var url = $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(address)}";
-        await Launcher.Default.OpenAsync(url);
-    }
 }
-
