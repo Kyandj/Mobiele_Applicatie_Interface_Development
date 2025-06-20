@@ -23,5 +23,11 @@ public partial class MainPage : ContentPage
 
         SemanticScreenReader.Announce(CounterBtn.Text);
     }
+
+    private async void OnOpenGoogleMapsClicked(object sender, EventArgs e)
+    {
+        var url = "https://www.google.com/maps";
+        await Launcher.Default.OpenAsync(url);
+    }
 }
 

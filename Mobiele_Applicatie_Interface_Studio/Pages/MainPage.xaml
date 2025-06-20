@@ -33,6 +33,13 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Fill" />
 
+            <Button
+                x:Name="Route"
+                Text="Open Google Maps"
+                Clicked="OnOpenGoogleMapsClicked"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" />
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
