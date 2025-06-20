@@ -27,10 +27,11 @@
             <Button
                 x:Name="CounterBtn"
                 Text="Click me" 
+                Clicked="OnRouteClicked"
                 SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill"/>
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>
+
 
