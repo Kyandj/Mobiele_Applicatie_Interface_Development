@@ -1,26 +1,29 @@
-using Mobiele_Applicatie_Interface_Studio.Services;
-using Mobiele_Applicatie_Interface_Studio.ViewModels;
+using Mobiele_Applicatie_Interface_Studio.Models;
 
 namespace Mobiele_Applicatie_Interface_Studio.Pages;
 
 public partial class BestellingDetails : ContentPage
 {
-    private BestellingDetailsViewModel _viewModel;
     private readonly LocationService _locationService = new();
+    private Order _order;
 
-    public BestellingDetails()
+    public BestellingDetails(int orderId)
     {
         InitializeComponent();
-        var service = new BestellingService(new HttpClient());
-        _viewModel = new BestellingDetailsViewModel(service);
-        BindingContext = _viewModel;
+    }
+
+    public BestellingDetails(Order order)
+    {
+        InitializeComponent();
+        _order = order;
+        BindingContext = _order;
+        // Laad details op basis van orderId
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
         await _locationService.StartLiveTrackingAsync();
-        await _viewModel.LoadBestellingAsync("98361538014"); // Replace with actual ID
     }
 
     protected override void OnDisappearing()
