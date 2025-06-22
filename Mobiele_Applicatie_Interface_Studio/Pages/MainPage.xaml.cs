@@ -30,5 +30,14 @@ public partial class MainPage : ContentPage
         var url = $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(address)}";
         await Launcher.Default.OpenAsync(url);
     }
+
+    private async void OnOrderIdClicked(object sender, EventArgs e)
+    {
+        if (sender is Button button && button.CommandParameter is Order selectedOrder)
+        {
+            // Navigeer naar de details pagina en geef het OrderId mee
+            await Navigation.PushAsync(new BestellingDetails(selectedOrder));
+        }
+    }
 }
 

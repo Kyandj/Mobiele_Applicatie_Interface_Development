@@ -3,10 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Mobiele_Applicatie_Interface_Studio.Pages.BestellingDetails"
              Title="BestellingDetails">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Padding="20">
+        <Label Text="Bestelling Details" FontSize="24" FontAttributes="Bold"/>
+        <Label Text="Order ID:" FontAttributes="Bold"/>
+        <Label Text="{Binding OrderId}"/>
+        <Label Text="Adres:" FontAttributes="Bold"/>
+        <Label Text="{Binding Address}"/>
+        <Label Text="Tijdvak:" FontAttributes="Bold"/>
+        <Label Text="{Binding TimeWindow}"/>
+        <!-- Voeg hier meer velden toe indien nodig -->
     </VerticalStackLayout>
 </ContentPage>
