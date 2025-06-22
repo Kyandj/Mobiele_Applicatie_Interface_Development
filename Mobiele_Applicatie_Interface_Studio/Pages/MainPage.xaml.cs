@@ -1,39 +1,38 @@
-﻿using Microsoft.Maui.Controls;
-using Mobiele_Applicatie_Interface_Studio.Pages;
+using Microsoft.Maui.Controls;
+using Mobiele_Applicatie_Interface_Studio.ViewModels;
+using Mobiele_Applicatie_Interface_Studio.Models;
 
 namespace Mobiele_Applicatie_Interface_Studio.Pages;
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
-    private readonly LocationService _locationService = new(); 
+    private readonly LocationService _locationService = new();
 
     public MainPage()
     {
         InitializeComponent();
+        BindingContext = new MainPageViewModel();
         _ = _locationService.StartLiveTrackingAsync();
     }
 
-    private void OnCounterClicked(object sender, EventArgs e)
+    private async void OnRouteClicked(object sender, EventArgs e)
     {
-        count++;
-
-        if (count == 1)
-            CounterBtn.Text = $"Clicked {count} time";
-        else
-            CounterBtn.Text = $"Clicked {count} times";
-
-        SemanticScreenReader.Announce(CounterBtn.Text);
-    }
-
-    private async void OnBestellingDetailsClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new BestellingDetails());
-    }
-
-    private async void OnRoutePaginaClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new RoutePagina());
+        // Haal het order-object op uit de BindingContext van de knop
+        var button = sender as Button;
+        if (button?.BindingContext is not null)
+        {
+            // Probeer het adres op te halen uit het order-object
+            var order = button.BindingContext;
+            var addressProperty = order.GetType().GetProperty("Address");
+            if (addressProperty != null)
+            {
+                var address = addressProperty.GetValue(order)?.ToString();
+                if (!string.IsNullOrWhiteSpace(address))
+                {
+                    var url = $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(address)}";
+                    await Launcher.Default.OpenAsync(url);
+                }
+            }
+        }
     }
 }
-
