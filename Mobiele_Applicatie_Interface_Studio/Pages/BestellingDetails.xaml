@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Mobiele_Applicatie_Interface_Studio.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="Mobiele_Applicatie_Interface_Studio.Pages.BestellingDetails"
              Title="Bestelling Details">
     <ScrollView>
@@ -13,7 +14,30 @@
             <Label Text="{Binding Address}"/>
             <Label Text="Tijdvak:" FontAttributes="Bold"/>
             <Label Text="{Binding TimeWindow}"/>
-            <!-- Voeg hier meer velden toe indien nodig -->
+            <GraphicsView 
+                x:Name="graphicsView" 
+                HeightRequest="300" 
+                WidthRequest="400"
+                BackgroundColor="White"/>
+            
+            <Label Text="Handtekening:" FontSize="16"/>
+            <toolkit:DrawView
+                x:Name="signatureView"
+                HeightRequest="200"
+                BackgroundColor="#DDD"
+                LineColor="Black"
+                LineWidth="3"
+                HorizontalOptions="Fill"
+                VerticalOptions="Start"/>
+            <Button
+                Text="Opslaan"
+                BackgroundColor="Lime"
+                TextColor="Black"
+                CornerRadius="20"
+                FontSize="22"
+                HorizontalOptions="End"
+                Clicked="OnSaveSignatureClicked"/>
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
