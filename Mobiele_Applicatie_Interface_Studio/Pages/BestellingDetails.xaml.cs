@@ -1,5 +1,5 @@
-//using Android.Graphics.Drawables;
 using Mobiele_Applicatie_Interface_Studio.Models;
+using System.IO;
 
 namespace Mobiele_Applicatie_Interface_Studio.Pages;
 
@@ -18,6 +18,7 @@ public partial class BestellingDetails : ContentPage
     {
         InitializeComponent();
         graphicsView.Drawable = new SimpleDrawable();
+        // Hier kun je eventueel order ophalen op basis van orderId
     }
 
     public BestellingDetails(Order order)
@@ -26,7 +27,6 @@ public partial class BestellingDetails : ContentPage
         _order = order;
         BindingContext = _order;
         graphicsView.Drawable = new SimpleDrawable();
-        // Laad details op basis van orderId
     }
 
     protected override async void OnAppearing()
@@ -43,9 +43,16 @@ public partial class BestellingDetails : ContentPage
 
     private async void OnSaveSignatureClicked(object sender, EventArgs e)
     {
-        if (signatureView.Drawable != null)
+        var imageStream = await signatureView.GetImageStream(200, 200);
+        if (imageStream != null)
         {
-            var imageStream = await signatureView.GetImageStream(200, 200);
+            // Voorbeeld: opslaan als PNG op het apparaat
+            var filePath = Path.Combine(FileSystem.CacheDirectory, "handtekening.png");
+            using (var fileStream = File.OpenWrite(filePath))
+            {
+                await imageStream.CopyToAsync(fileStream);
+            }
+            await DisplayAlert("Opgeslagen", $"Handtekening opgeslagen als {filePath}", "OK");
         }
     }
 }

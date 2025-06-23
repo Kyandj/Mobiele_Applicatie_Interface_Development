@@ -21,7 +21,7 @@
                 BackgroundColor="White"/>
             
             <Label Text="Handtekening:" FontSize="16"/>
-            <toolkit:DrawView
+            <toolkit:DrawingView
                 x:Name="signatureView"
                 HeightRequest="200"
                 BackgroundColor="#DDD"

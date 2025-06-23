@@ -11,14 +11,14 @@
 
             <!-- Titel en gebruiker -->
             <HorizontalStackLayout VerticalOptions="Start" Spacing="10">
-                <Label Text="Uw bestellingen"
+                <Label Text="Dashboard"
                        FontSize="28"
                        FontAttributes="Bold"
                        TextColor="Black"
                        BackgroundColor="#FF7F7F"
                        Padding="10,5"
                        HorizontalOptions="StartAndExpand"/>
-                <Frame Padding="10,5" CornerRadius="20" BackgroundColor="White" HasShadow="False" VerticalOptions="Center">
+                <Frame Padding="10,5" CornerRadius="8" BackgroundColor="White" HasShadow="False" VerticalOptions="Center" Margin="1125,0,10,0">
                     <Label Text="John Doe" TextColor="Black"/>
                 </Frame>
             </HorizontalStackLayout>
@@ -38,12 +38,12 @@
                                     TextColor="Blue"
                                     Clicked="OnOrderIdClicked"
                                     CommandParameter="{Binding .}" />
-                                <Label Text="{Binding Address}" FontSize="14"/>
+                                <Label Text="{Binding Address}" FontSize="14" TextColor="Black"/>
                                 <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,5,0,0">
                                     <Frame Grid.Column="0" Padding="5,2" BackgroundColor="Yellow" CornerRadius="8" HasShadow="False" VerticalOptions="Center">
                                         <Label Text="Onderweg" FontSize="12" TextColor="Black"/>
                                     </Frame>
-                                    <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
                                     <Button Grid.Column="2" Text="Route" BackgroundColor="LimeGreen" TextColor="White" CornerRadius="16" HeightRequest="32" WidthRequest="80" Clicked="OnRouteClicked" VerticalOptions="Center"/>
                                 </Grid>
                             </VerticalStackLayout>
@@ -67,12 +67,12 @@
                                     TextColor="Blue"
                                     Clicked="OnOrderIdClicked"
                                     CommandParameter="{Binding .}" />
-                                <Label Text="{Binding Address}" FontSize="14"/>
+                                <Label Text="{Binding Address}" FontSize="14" TextColor="Black"/>
                                 <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,5,0,0">
                                     <Frame Grid.Column="0" Padding="5,2" BackgroundColor="Yellow" CornerRadius="8" HasShadow="False" VerticalOptions="Center">
                                         <Label Text="Niet bezorgd" FontSize="12" TextColor="Black"/>
                                     </Frame>
-                                    <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
                                     <Button Grid.Column="2" Text="Route" BackgroundColor="LimeGreen" TextColor="White" CornerRadius="16" HeightRequest="32" WidthRequest="80" Clicked="OnRouteClicked" VerticalOptions="Center"/>
                                 </Grid>
                             </VerticalStackLayout>
@@ -96,12 +96,12 @@
                                     TextColor="Blue"
                                     Clicked="OnOrderIdClicked"
                                     CommandParameter="{Binding .}" />
-                                <Label Text="{Binding Address}" FontSize="14"/>
+                                <Label Text="{Binding Address}" FontSize="14" TextColor="Black"/>
                                 <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,5,0,0">
                                     <Frame Grid.Column="0" Padding="5,2" BackgroundColor="Yellow" CornerRadius="8" HasShadow="False" VerticalOptions="Center">
                                         <Label Text="Bezorgd" FontSize="12" TextColor="Black"/>
                                     </Frame>
-                                    <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
                                     <Button Grid.Column="2" Text="Route" BackgroundColor="LimeGreen" TextColor="White" CornerRadius="16" HeightRequest="32" WidthRequest="80" Clicked="OnRouteClicked" VerticalOptions="Center"/>
                                 </Grid>
                             </VerticalStackLayout>
