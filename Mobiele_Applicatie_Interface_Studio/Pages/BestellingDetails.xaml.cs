@@ -11,13 +11,11 @@ public partial class BestellingDetails : ContentPage
     public BestellingDetails()
     {
         InitializeComponent();
-        graphicsView.Drawable = new SimpleDrawable();
     }
 
     public BestellingDetails(int orderId)
     {
         InitializeComponent();
-        graphicsView.Drawable = new SimpleDrawable();
         // Hier kun je eventueel order ophalen op basis van orderId
     }
 
@@ -26,13 +24,23 @@ public partial class BestellingDetails : ContentPage
         InitializeComponent();
         _order = order;
         BindingContext = _order;
-        graphicsView.Drawable = new SimpleDrawable();
     }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
         await _locationService.StartLiveTrackingAsync();
+
+        // Laad de handtekening als deze bestaat
+        var filePath = Path.Combine(FileSystem.AppDataDirectory, $"signature_{_order.OrderId}.png");
+        if (File.Exists(filePath))
+        {
+            signatureImage.Source = ImageSource.FromFile(filePath);
+        }
+        else
+        {
+            signatureImage.Source = null; // Of een placeholder
+        }
     }
 
     protected override void OnDisappearing()
@@ -43,16 +51,56 @@ public partial class BestellingDetails : ContentPage
 
     private async void OnSaveSignatureClicked(object sender, EventArgs e)
     {
+        if (signatureView.Lines?.Any() != true)
+        {
+            await DisplayAlert("Error", "Please provide a signature before saving.", "OK");
+            return;
+        }
+
         var imageStream = await signatureView.GetImageStream(200, 200);
+
         if (imageStream != null)
         {
-            // Voorbeeld: opslaan als PNG op het apparaat
-            var filePath = Path.Combine(FileSystem.CacheDirectory, "handtekening.png");
-            using (var fileStream = File.OpenWrite(filePath))
+            // Kies een pad om het bestand op te slaan
+            var filePath = Path.Combine(FileSystem.AppDataDirectory, $"signature_{_order.OrderId}.png");
+
+            using (var fileStream = File.Create(filePath))
             {
                 await imageStream.CopyToAsync(fileStream);
             }
-            await DisplayAlert("Opgeslagen", $"Handtekening opgeslagen als {filePath}", "OK");
+
+            await DisplayAlert("Success", $"Handtekening opgeslagen op: {filePath}", "OK");
+        }
+        else
+        {
+            await DisplayAlert("Error", "Kon de handtekening niet opslaan.", "OK");
+        }
+    }
+
+    private void OnStatusOnderwegClicked(object sender, EventArgs e)
+    {
+        if (BindingContext is Order order)
+        {
+            order.BezorgingStatus = "Onderweg";
+            order.OrderKleur = Colors.Yellow;
+        }
+    }
+
+    private void OnStatusBezorgdClicked(object sender, EventArgs e)
+    {
+        if (BindingContext is Order order)
+        {
+            order.BezorgingStatus = "Bezorgd";
+            order.OrderKleur = Colors.Green;
+        }
+    }
+
+    private void OnStatusNietThuisClicked(object sender, EventArgs e)
+    {
+        if (BindingContext is Order order)
+        {
+            order.BezorgingStatus = "Niet Thuis";
+            order.OrderKleur = Colors.Red;
         }
     }
 }

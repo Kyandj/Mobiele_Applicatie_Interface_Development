@@ -14,13 +14,34 @@
             <Label Text="{Binding Address}"/>
             <Label Text="Tijdvak:" FontAttributes="Bold"/>
             <Label Text="{Binding TimeWindow}"/>
-            <GraphicsView 
-                x:Name="graphicsView" 
-                HeightRequest="300" 
-                WidthRequest="400"
-                BackgroundColor="White"/>
-            
+
+            <Label Text="Huidige Status:" FontAttributes="Bold" Margin="0,20,0,0"/>
+            <Label Text="{Binding BezorgingStatus}" FontSize="18" FontAttributes="Bold" TextColor="White"/>
+
+            <Label Text="Status Aanpassen:" FontAttributes="Bold" Margin="0,20,0,0"/>
+            <HorizontalStackLayout Spacing="10">
+                <Button
+                    Text="Onderweg"
+                    BackgroundColor="Yellow"
+                    TextColor="Black"
+                    Clicked="OnStatusOnderwegClicked"/>
+                <Button
+                    Text="Bezorgd"
+                    BackgroundColor="Green"
+                    TextColor="Black"
+                    Clicked="OnStatusBezorgdClicked"/>
+                <Button
+                    Text="Niet Thuis"
+                    BackgroundColor="Red"
+                    TextColor="Black"
+                    Clicked="OnStatusNietThuisClicked"/>
+            </HorizontalStackLayout>
+
             <Label Text="Handtekening:" FontSize="16"/>
+            <Image 
+                x:Name="signatureImage" 
+                WidthRequest="200" 
+                HeightRequest="200" />
             <toolkit:DrawingView
                 x:Name="signatureView"
                 HeightRequest="200"
@@ -37,7 +58,7 @@
                 FontSize="22"
                 HorizontalOptions="End"
                 Clicked="OnSaveSignatureClicked"/>
-            
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
