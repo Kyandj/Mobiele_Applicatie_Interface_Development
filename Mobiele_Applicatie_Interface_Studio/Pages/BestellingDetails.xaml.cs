@@ -95,21 +95,12 @@ public partial class BestellingDetails : ContentPage
         }
     }
 
-    private void OnStatusNietThuisClicked(object sender, EventArgs e)
-    {
-        if (BindingContext is Order order)
-        {
-            order.BezorgingStatus = "Niet Thuis";
-            order.OrderKleur = Colors.Red;
-        }
-    }
-
     private void OnStatusOverigClicked(object sender, EventArgs e)
     {
         if (BindingContext is Order order)
         {
             order.BezorgingStatus = "Overig";
-            order.OrderKleur = Colors.Cyan;
+            order.OrderKleur = Colors.Red;
         }
     }
 }

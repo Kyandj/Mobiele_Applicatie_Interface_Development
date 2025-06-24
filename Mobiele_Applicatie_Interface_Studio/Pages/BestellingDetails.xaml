@@ -31,13 +31,8 @@
                     TextColor="Black"
                     Clicked="OnStatusBezorgdClicked"/>
                 <Button
-                    Text="Niet Thuis"
-                    BackgroundColor="Red"
-                    TextColor="Black"
-                    Clicked="OnStatusNietThuisClicked"/>
-                <Button
                     Text="Overig"
-                    BackgroundColor="Cyan"
+                    BackgroundColor="Red"
                     TextColor="Black"
                     Clicked="OnStatusOverigClicked"/>
             </HorizontalStackLayout>
