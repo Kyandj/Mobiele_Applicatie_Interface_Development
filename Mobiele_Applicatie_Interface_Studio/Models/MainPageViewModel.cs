@@ -4,13 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Mobiele_Applicatie_Interface_Studio.Models;
 
 namespace Mobiele_Applicatie_Interface_Studio.ViewModels;
 
-public class MainPageViewModel
+public class MainPageViewModel : INotifyPropertyChanged
 {
     public ObservableCollection<Order> Orders { get; set; }
+
+    public IEnumerable<Order> InBehandelingOrders => Orders.Where(o => o.BezorgingStatus == "Onderweg");
+    public IEnumerable<Order> BezorgdOrders => Orders.Where(o => o.BezorgingStatus == "Bezorgd");
+    public IEnumerable<Order> OverigOrders => Orders.Where(o => o.BezorgingStatus == "Overig");
+
     public MainPageViewModel()
     {
         Orders = new ObservableCollection<Order>
@@ -34,5 +41,37 @@ public class MainPageViewModel
             new Order { OrderId = 112381910, Address = "Bergweg 10\n6272GH", TimeWindow = "12:00 - 16:00" , BezorgingStatus = "Overig", OrderKleur = Colors.Cyan},
 
         };
+
+        Orders.CollectionChanged += (s, e) =>
+        {
+            if (e.NewItems != null)
+                foreach (Order order in e.NewItems)
+                    order.PropertyChanged += Order_PropertyChanged;
+            if (e.OldItems != null)
+                foreach (Order order in e.OldItems)
+                    order.PropertyChanged -= Order_PropertyChanged;
+
+            OnPropertyChanged(nameof(InBehandelingOrders));
+            OnPropertyChanged(nameof(BezorgdOrders));
+            OnPropertyChanged(nameof(OverigOrders));
+        };
+
+        // Abonneer op bestaande orders
+        foreach (var order in Orders)
+            order.PropertyChanged += Order_PropertyChanged;
     }
+
+    private void Order_PropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(Order.BezorgingStatus))
+        {
+            OnPropertyChanged(nameof(InBehandelingOrders));
+            OnPropertyChanged(nameof(BezorgdOrders));
+            OnPropertyChanged(nameof(OverigOrders));
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }

@@ -24,7 +24,63 @@
             </HorizontalStackLayout>
 
             <Label Text="In behandeling:" FontSize="20" FontAttributes="Bold" TextColor="White"/>
-            <CollectionView ItemsSource="{Binding Orders}">
+            <CollectionView ItemsSource="{Binding InBehandelingOrders}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Black" CornerRadius="8" Padding="10" Margin="0,0,0,10" BackgroundColor="#E0E0E0">
+                            <VerticalStackLayout>
+                                <Button 
+                        Text="{Binding OrderId}" 
+                        FontAttributes="Bold" 
+                        FontSize="16"
+                        BackgroundColor="Transparent"
+                        TextColor="Blue"
+                        Clicked="OnOrderIdClicked"
+                        CommandParameter="{Binding .}" />
+                                <Label Text="{Binding Address}" FontSize="14" TextColor="Black"/>
+                                <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,5,0,0">
+                                    <Frame Grid.Column="0" Padding="5,2" BackgroundColor="{Binding OrderKleur}" CornerRadius="8" HasShadow="False" VerticalOptions="Center">
+                                        <Label Text="{Binding BezorgingStatus}" FontSize="12" TextColor="Black"/>
+                                    </Frame>
+                                    <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
+                                    <Button Grid.Column="2" Text="Route" BackgroundColor="LimeGreen" TextColor="White" CornerRadius="16" HeightRequest="32" WidthRequest="80" Clicked="OnRouteClicked" VerticalOptions="Center"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Bezorgd:" FontSize="20" FontAttributes="Bold" TextColor="White" Margin="0,20,0,0"/>
+            <CollectionView ItemsSource="{Binding BezorgdOrders}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Black" CornerRadius="8" Padding="10" Margin="0,0,0,10" BackgroundColor="#E0E0E0">
+                            <VerticalStackLayout>
+                                <Button 
+                        Text="{Binding OrderId}" 
+                        FontAttributes="Bold" 
+                        FontSize="16"
+                        BackgroundColor="Transparent"
+                        TextColor="Blue"
+                        Clicked="OnOrderIdClicked"
+                        CommandParameter="{Binding .}" />
+                                <Label Text="{Binding Address}" FontSize="14" TextColor="Black"/>
+                                <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" Margin="0,5,0,0">
+                                    <Frame Grid.Column="0" Padding="5,2" BackgroundColor="{Binding OrderKleur}" CornerRadius="8" HasShadow="False" VerticalOptions="Center">
+                                        <Label Text="{Binding BezorgingStatus}" FontSize="12" TextColor="Black"/>
+                                    </Frame>
+                                    <Label Grid.Column="1" Text="{Binding TimeWindow}" FontSize="14" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
+                                    <Button Grid.Column="2" Text="Route" BackgroundColor="LimeGreen" TextColor="White" CornerRadius="16" HeightRequest="32" WidthRequest="80" Clicked="OnRouteClicked" VerticalOptions="Center"/>
+                                </Grid>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Overig:" FontSize="20" FontAttributes="Bold" TextColor="White" Margin="0,20,0,0"/>
+            <CollectionView ItemsSource="{Binding OverigOrders}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame BorderColor="Black" CornerRadius="8" Padding="10" Margin="0,0,0,10" BackgroundColor="#E0E0E0">
