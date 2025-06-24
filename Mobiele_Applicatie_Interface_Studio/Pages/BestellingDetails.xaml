@@ -16,7 +16,7 @@
             <Label Text="{Binding TimeWindow}"/>
 
             <Label Text="Huidige Status:" FontAttributes="Bold" Margin="0,20,0,0"/>
-            <Label Text="{Binding BezorgingStatus}" FontSize="18" FontAttributes="Bold" TextColor="White"/>
+            <Label Text="{Binding BezorgingStatus}" FontSize="18" FontAttributes="Bold" TextColor="{Binding OrderKleur}"/>
 
             <Label Text="Status Aanpassen:" FontAttributes="Bold" Margin="0,20,0,0"/>
             <HorizontalStackLayout Spacing="10">
@@ -35,6 +35,11 @@
                     BackgroundColor="Red"
                     TextColor="Black"
                     Clicked="OnStatusNietThuisClicked"/>
+                <Button
+                    Text="Overig"
+                    BackgroundColor="Cyan"
+                    TextColor="Black"
+                    Clicked="OnStatusOverigClicked"/>
             </HorizontalStackLayout>
 
             <Label Text="Handtekening:" FontSize="16"/>

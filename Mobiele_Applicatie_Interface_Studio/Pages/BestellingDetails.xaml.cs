@@ -103,4 +103,13 @@ public partial class BestellingDetails : ContentPage
             order.OrderKleur = Colors.Red;
         }
     }
+
+    private void OnStatusOverigClicked(object sender, EventArgs e)
+    {
+        if (BindingContext is Order order)
+        {
+            order.BezorgingStatus = "Overig";
+            order.OrderKleur = Colors.Cyan;
+        }
+    }
 }

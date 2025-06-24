@@ -29,6 +29,10 @@ public class MainPageViewModel
             new Order { OrderId = 590614625, Address = "Dorpsstraat 77\n6273IJ", TimeWindow = "08:00 - 09:00" , BezorgingStatus = "Bezorgd", OrderKleur = Colors.Green},
             new Order { OrderId = 750145170, Address = "Schoollaan 3\n6274KL", TimeWindow = "11:00 - 12:00" , BezorgingStatus = "Bezorgd", OrderKleur = Colors.Green},
             new Order { OrderId = 345489437, Address = "Parklaan 8\n6275MN", TimeWindow = "13:00 - 14:00" , BezorgingStatus = "Bezorgd", OrderKleur = Colors.Green},
+
+            new Order { OrderId = 881916491, Address = "Willembeekmanstraat 6\n6271CZ", TimeWindow = "18:00 - 20:00" , BezorgingStatus = "Overig", OrderKleur = Colors.Cyan},
+            new Order { OrderId = 112381910, Address = "Bergweg 10\n6272GH", TimeWindow = "10:00 - 12:00" , BezorgingStatus = "Overig", OrderKleur = Colors.Cyan},
+
         };
     }
 }
