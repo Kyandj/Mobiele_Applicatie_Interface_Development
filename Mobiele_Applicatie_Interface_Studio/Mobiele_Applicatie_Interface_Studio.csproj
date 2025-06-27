@@ -25,8 +25,7 @@
 		<ApplicationTitle>Mobiele_Applicatie_Interface_Studio</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mobiele_applicatie_interface_studio</ApplicationId>
-
+		<ApplicationId>com.companyname.mobiele_applicatie_interface_studio</ApplicationId
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>

@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using Android.OS;
 
 namespace Mobiele_Applicatie_Interface_Studio
 {

@@ -11,7 +11,7 @@
 
             <!-- Titel en gebruiker -->
             <HorizontalStackLayout VerticalOptions="Start" Spacing="10">
-                <Label Text="Dashboard"
+                <Label Text="Mijn Bestellingen"
                        FontSize="28"
                        FontAttributes="Bold"
                        TextColor="Black"
