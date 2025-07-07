@@ -1,0 +1,36 @@
+c3ce88a - Duncan Schmets - Niet Thuis Status weg, Sorteer ook op TimeWindow
+597cc3c - Darrenvw - mainpage filters toegevoegd en werkend met status
+1aac34d - Duncan Schmets - Spacing Status Button & TImewindows Orders
+4d9da31 - Duncan Schmets - Huidige status kleur aangepast + Nieuwe Status
+a949a4b - Duncan-2404512 - Aanpassen Status BezorgDetails pagina
+ae5e596 - Darrenvw_ - handtekeningen werkend. homepage aangepast
+5d4b864 - Duncan-2404512 - Handtekeningsveld (Werkt niet)
+d20f32d - Duncan Schmets - BestellingDetails pagina
+d49d271 - Duncan Schmets - Merge met Master
+c192ae7 - Duncan Schmets - Merge branch 'master' of https://github.com/Kyandj/Mobiele_Applicatie_Interface_Development
+890b4e3 - Duncan Schmets - Revert "BestellingsDetails pagina"
+a95c9e4 - Duncan Schmets - BestellingsDetails pagina
+b27c22d - Divancia-ICT - Google maps gekoppeld aan rout button
+aa1f300 - Darrenvw - Merge mainpage compleet
+1620cb4 - Darrenvw - Mainpage aanpassing
+410c5c7 - Darrenvw - Mainpage viewmodel
+c2f4165 - Darrenvw - Merge mainpage
+328c134 - Divancia-ICT - mainmerge
+232a554 - Divancia-ICT - mainpage nog bijgewerkt
+8d06dab - Divancia-ICT - met een aantal aanpassingen
+49d85f9 - Duncan Schmets - BestellingDetails Pagina (Werkt niet)
+8a35300 - Divancia-ICT - met de google maps die wel werkt
+eca7227 - Duncan Schmets - Buttons naar andere pagina's
+af8ceae - Divancia-ICT - heb nog wat dingen veranderd
+0e06cf4 - Divancia-ICT - Routepage, maar het werkt niet
+74d8f95 - Divancia-ICT - heb nog wat dingen veranderd
+edc6b08 - Kyandj - Geolocation API V1.2 (Volledig Werkend)
+1ca2e09 - Kyandj - Geolocation API V1.1 (Werkend)
+cca9cd4 - Kyandj - V1.1 Geolocation (Niet werkend)
+009e07c - Kyandj - Begin werkende geo-location API
+3405d75 - Divancia-ICT - Routepage, maar het werkt niet
+c1b4862 - Kyandj - Begin GPS geolocation API
+b1dbecc - Kyandj - Pagina's aangemaakt (API moet nog gekoppeld worden)
+9c91155 - Kyandj - Test
+5c189ba - Kyandj - Add project files.
+3b6d82c - Kyandj - Add .gitattributes and .gitignore.

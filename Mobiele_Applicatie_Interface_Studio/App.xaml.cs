@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-
-namespace Mobiele_Applicatie_Interface_Studio
+﻿namespace Mobiele_Applicatie_Interface_Studio
 {
     public partial class App : Application
     {

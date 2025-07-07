@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Mobiele_Applicatie_Interface_Studio.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Mobiele_Applicatie_Interface_Studio.Models;
 
 namespace Mobiele_Applicatie_Interface_Studio.ViewModels;
 

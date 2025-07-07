@@ -1,12 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.Maui.Devices.Sensors;
-using Microsoft.Maui.ApplicationModel;
-using System;
+using Refit;
 using System.Diagnostics;
 using System.Reactive.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Refit;
 
 public partial class LocationService : ObservableObject, IDisposable
 {

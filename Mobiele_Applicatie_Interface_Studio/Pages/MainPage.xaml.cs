@@ -1,6 +1,4 @@
-using Microsoft.Maui.Controls;
 using Mobiele_Applicatie_Interface_Studio.ViewModels;
-using Mobiele_Applicatie_Interface_Studio.Models;
 
 namespace Mobiele_Applicatie_Interface_Studio.Pages;
 
@@ -31,14 +29,6 @@ public partial class MainPage : ContentPage
                     await Launcher.Default.OpenAsync(url);
                 }
             }
-        }
-    }
-    private async void OnOrderIdClicked(object sender, EventArgs e)
-    {
-        if (sender is Button button && button.CommandParameter is Order selectedOrder)
-        {
-            // Navigeer naar de details pagina en geef het OrderId mee
-            await Navigation.PushAsync(new BestellingDetails(selectedOrder));
         }
     }
 }

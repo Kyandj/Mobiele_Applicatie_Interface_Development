@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using System.Threading.Tasks;
-using Refit;
+﻿using Refit;
 
 public interface ILocationWebhookApi
 {
