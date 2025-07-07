@@ -15,9 +15,11 @@ public partial class MainPage : ContentPage
 
     private async void OnRouteClicked(object sender, EventArgs e)
     {
+        // Haal het order-object op uit de BindingContext van de knop
         var button = sender as Button;
         if (button?.BindingContext is not null)
         {
+            // Probeer het adres op te halen uit het order-object
             var order = button.BindingContext;
             var addressProperty = order.GetType().GetProperty("Address");
             if (addressProperty != null)
